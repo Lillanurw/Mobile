@@ -50,6 +50,7 @@ class _FuturePageState extends State<FuturePage> {
       });
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
