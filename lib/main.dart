@@ -48,8 +48,15 @@ class _FuturePageState extends State<FuturePage> {
       setState(() {
         result = total.toString();
       });
-    });
+    }
+    );
   }
+    Future returnError() async {
+      await Future.delayed(const Duration(seconds: 2));
+      throw Exception('Hayyo Error!');
+      
+      }
+
 
   @override
   Widget build(BuildContext context) {
@@ -78,8 +85,18 @@ class _FuturePageState extends State<FuturePage> {
               //   });
               // });
 
-              returnFG();
+              //returnFG();
+              returnError().then((_) {
+                setState(() {
+                  result = 'Success';
+                });
+              }).catchError((onError) {
+                setState(() {
+                  result = onError.toString();
+                });
+              }). whenComplete(() => print('Completed'));
             },
+
           ),
           const Spacer(),
           Text(result),

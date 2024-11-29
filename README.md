@@ -24,3 +24,6 @@ Soal 8
 Perbedaan kode langkah 1 dan 4
 Menggunakan FutureGroup = digunakan untuk mengelola grup Future yang dapat berubah (dinamis). Anda dapat menambahkan Future secara bertahap sebelum menutup grup, dan grup akan dianggap selesai ketika semua Future yang ditambahkan selesai.
 Menggunakan FutureWait = digunakan untuk menunggu semua Future dalam daftar selesai bersamaan. Ketika semua Future selesai, ia mengembalikan sebuah Future baru yang menyimpan hasil dari semua Future yang selesai.
+
+Soal 9
+![alt text](image.png)
