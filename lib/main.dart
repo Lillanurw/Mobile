@@ -34,7 +34,22 @@ class FuturePage extends StatefulWidget {
 
 class _FuturePageState extends State<FuturePage> {
   String result = '';
-
+  void returnFG() {
+    FutureGroup<int> futureGroup = FutureGroup<int>();
+    futureGroup.add(returnOneAsync());
+    futureGroup.add(returnTwoAsync());
+    futureGroup.add(returnThreeAsync());
+    futureGroup.close();
+    futureGroup.future.then((List<int> values) {
+      int total = 0;
+      for (int value in values) {
+        total += value;
+      }
+      setState(() {
+        result = total.toString();
+      });
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,11 +71,13 @@ class _FuturePageState extends State<FuturePage> {
               //   result = 'An ErrorOccurred';
               //   setState(() {});
               // });
-              getNumber().then((value){
-                setState(() {
-                  result = value.toString();
-                });
-              });
+              // getNumber().then((value){
+              //   setState(() {
+              //     result = value.toString();
+              //   });
+              // });
+
+              returnFG();
             },
           ),
           const Spacer(),

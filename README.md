@@ -19,4 +19,4 @@ Jawab :
 - Fungsi catchError digunakan untuk menangani kesalahan (error) yang mungkin terjadi selama proses getData().
 
 Capture Hasil GIF : ![alt text](assets/GIF/Praktikum1.gif)
-g
+
